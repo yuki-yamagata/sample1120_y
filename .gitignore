@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Video files (large files)
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Video frames (can be regenerated)
+videos/*/
+
+# SAM2 checkpoints (large model files)
+sam2/checkpoints/*.pt
+
+# Build artifacts
+sam2/build/
+sam2/*.egg-info/
+*.egg-info/
+
+# Output files
+*_segmented/
+positions/*.csv
+*.png
+
+# Keep these folders but ignore contents
+!videos/.gitkeep
+!positions/.gitkeep
