@@ -67,3 +67,4 @@ positions/*.csv
 # Keep these folders but ignore contents
 !videos/.gitkeep
 !positions/.gitkeep
+sam2/
