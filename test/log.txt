@@ -1,0 +1,75 @@
+yamagatayuki@yamagatacstudio fromInabasan % cd /Users/yamagatayuki/Docume
+nts/fromInabasan/251120/sample1120_y && mkdir -p videos/day_30sec && ffmp
+eg -i videos/D1AT_20251029_Trim_day_30sec.mp4 -q:v 2 -start_number 0 vide
+os/day_30sec/'%05d.jpg'
+ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 15.0.0 (clang-1500.1.0.2.5)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'videos/D1AT_20251029_Trim_day_30sec.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp41isom
+    creation_time   : 2025-11-17T04:17:40.000000Z
+  Duration: 00:00:30.05, start: 0.000000, bitrate: 2243 kb/s
+  Stream #0:0[0x1](und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 2048 kb/s, 25.02 fps, 25 tbr, 25k tbn (default)
+      Metadata:
+        creation_time   : 2025-11-17T04:17:40.000000Z
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : AVC Coding
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 192 kb/s (default)
+      Metadata:
+        creation_time   : 2025-11-17T04:17:40.000000Z
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'videos/day_30sec/%05d.jpg':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp41isom
+    encoder         : Lavf61.7.100
+  Stream #0:0(und): Video: mjpeg, yuv420p(pc, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 25 fps, 25 tbn (default)
+      Metadata:
+        creation_time   : 2025-11-17T04:17:40.000000Z
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 mjpeg
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+frame=  308 fps=0.0 q=2.0 size=N/A time=00:00:12.36 bitrate=N/A speed=24.frame=  645 fps=639 q=2.0 size=N/A time=00:00:25.80 bitrate=N/A speed=25.[out#0/image2 @ 0x144e04730] video:403766KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=  752 fps=652 q=2.0 Lsize=N/A time=00:00:30.08 bitrate=N/A speed=26.1x    
+yamagatayuki@yamagatacstudio sample1120_y % source .venv/bin/activate && 
+python segmentation.py --video-mp4 videos/D1AT_20251029_Trim_day_30sec.mp
+4 --frames-dir videos/day_30sec --output-csv positions/mouse_tracks_day.c
+sv --num-objects 2
+PyTorch version: 2.9.1
+Torchvision version: 0.24.1
+CUDA is available: False
+using device: mps
+
+Support for MPS devices is preliminary. SAM 2 is trained with CUDA and might give numerically different outputs and sometimes degraded performance on MPS. See e.g. https://github.com/pytorch/pytorch/issues/84936 for a discussion.
+Using 752 frames from videos/day_30sec
+frame loading (JPEG): 100%|████████████| 752/752 [00:25<00:00, 29.25it/s]
+441 922
+/Users/yamagatayuki/Documents/fromInabasan/251120/sample1120_y/.venv/lib/python3.11/site-packages/sam2/sam2_video_predictor.py:786: UserWarning: cannot import name '_C' from 'sam2' (/Users/yamagatayuki/Documents/fromInabasan/251120/sample1120_y/.venv/lib/python3.11/site-packages/sam2/__init__.py)
+
+Skipping the post-processing step due to the error above. You can still use SAM 2 and it's OK to ignore the error above, although some post-processing functionality may be limited (which doesn't affect the results in most cases; see https://github.com/facebookresearch/sam2/blob/main/INSTALL.md).
+  pred_masks_gpu = fill_holes_in_mask_scores(
+2025-12-04 11:00:10.087 python[9656:134097] error messaging the mach port for IMKCFRunLoopWakeUpReliable
+1313 237
+propagate in video: 100%|██████████████| 752/752 [07:18<00:00,  1.71it/s]
+output segmented image: 100%|██████████| 752/752 [02:54<00:00,  4.30it/s]
+Saved centroid CSV to positions/mouse_tracks_day.csv
+(.venv) yamagatayuki@yamagatacstudio sample1120_y % 
